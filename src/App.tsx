@@ -1,14 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { State } from "./redux/index";
+import { useDispatch, useSelector } from "react-redux";
+import { setHome } from "./redux/actions/home/home";
+
+const SetActions = () => {
+  const dispatch = useDispatch();
+  return {
+    setHome: (visible: boolean) => dispatch(setHome(visible)),
+  };
+};
 
 function App() {
+  const { home } = useSelector((state: State) => state.Home);
+  const { setHome } = SetActions();
+
+  const setHomie = () => {
+    if (home) {
+      setHome(false);
+    } else {
+      setHome(true);
+    }
+  };
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {home ? <img src={logo} className="App-logo" alt="logo" /> : "caca"}
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          {home}
+          <button onClick={() => setHomie()}>{home}</button>
         </p>
         <a
           className="App-link"
@@ -16,7 +37,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {home}
         </a>
       </header>
     </div>
