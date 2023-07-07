@@ -6,9 +6,7 @@ import slideSHowPhoto3 from "../../styles/photos/slideshow/3.jpg";
 import slideSHowPhoto4 from "../../styles/photos/slideshow/4.jpg";
 import slideSHowPhoto5 from "../../styles/photos/slideshow/5.jpg";
 
-
 const slideShow = () => {
-
   return (
     <div>
       <Fade duration={4000} arrows={false}>

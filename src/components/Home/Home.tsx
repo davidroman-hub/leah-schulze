@@ -14,7 +14,7 @@ const SetActions = () => {
     setHome: (visible: boolean) => dispatch(setHome(visible)),
   };
 };
-const Home: FC = () => {
+const Home: FC = (params: any) => {
   const [t, i18n] = useTranslation("global");
   const { setHome } = SetActions();
   const { home } = useSelector((state: State) => state.Home);
@@ -31,7 +31,7 @@ const Home: FC = () => {
 
   return (
     <div className="body">
-      {header()}
+      {header(params)}
       {slideShow()}
     </div>
   );
