@@ -9,6 +9,9 @@ import configureStore from "./configureStore";
 import { I18nextProvider } from 'react-i18next';
 import i18next from './translate';
 
+import "./styles/GlobalStyles.scss";
+import "./styles/fonts/HelveticaLeah-regular.ttf"
+
 const { store, persistor } = configureStore();
 
 const root = ReactDOM.createRoot(
