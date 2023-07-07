@@ -4,8 +4,10 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { PersistGate } from 'redux-persist/integration/react';
+import { PersistGate } from "redux-persist/integration/react";
 import configureStore from "./configureStore";
+import { I18nextProvider } from 'react-i18next';
+import i18next from './translate';
 
 const { store, persistor } = configureStore();
 
@@ -15,7 +17,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <App />
+      <I18nextProvider i18n={i18next}>
+        <App />
+      </I18nextProvider>
     </PersistGate>
   </Provider>
 );

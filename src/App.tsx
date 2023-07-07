@@ -4,6 +4,7 @@ import "./App.css";
 import { State } from "./redux/index";
 import { useDispatch, useSelector } from "react-redux";
 import { setHome } from "./redux/actions/home/home";
+import { useTranslation } from "react-i18next";
 
 const SetActions = () => {
   const dispatch = useDispatch();
@@ -14,23 +15,27 @@ const SetActions = () => {
 
 function App() {
   const { home } = useSelector((state: State) => state.Home);
+  
+  const [t, i18n] = useTranslation("global");
   const { setHome } = SetActions();
 
   const setHomie = () => {
     if (home) {
       setHome(false);
+      i18n.changeLanguage('de');
+
     } else {
       setHome(true);
+      i18n.changeLanguage('en');
     }
   };
   return (
     <div className="App">
       <header className="App-header">
         {home ? <img src={logo} className="App-logo" alt="logo" /> : "caca"}
-        <p>
-          {home}
-          <button onClick={() => setHomie()}>{home}</button>
-        </p>
+        <div>
+          <button onClick={() => setHomie()}>{t("Home.hello")}</button>
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"

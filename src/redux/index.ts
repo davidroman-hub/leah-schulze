@@ -17,24 +17,19 @@ import {
 } from '../redux/reducers/home/home';
 
 
-
-/**
- * Translations
- */
-
-// import {
-//   TranslationState,
-//   translation as GeneralTranslation,
-// } from '../reducers/translations/translation';
+import {
+  TranslationState,
+  translation as GeneralTranslation,
+} from '../redux/reducers/locale/locale';
 
 export interface State {
   Home: HomeState;
-  //GeneralTranslation: TranslationState;
+  Locale: TranslationState;
 }
 
 const rootReducer = combineReducers({
   Home,
- // GeneralTranslation,
+  GeneralTranslation,
 });
 
 export default rootReducer;
