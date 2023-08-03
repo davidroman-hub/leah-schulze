@@ -1,0 +1,27 @@
+.work-container {
+  background-color: red;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.work-cards-pos {
+  background-color: aqua;
+  display: flex;
+  width: 1300px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-work{
+    display: flex;
+    flex-direction: column;
+}
+.info-project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 140px;
+}
