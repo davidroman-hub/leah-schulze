@@ -14,7 +14,7 @@ const initialState: ProjectState = {
   projectInfo: {},
 };
 
-export const HomeReducer = (
+export const ProjectsReducer = (
   state = initialState,
   action: FluxStandardAction<string, any>
 ): ProjectState => {

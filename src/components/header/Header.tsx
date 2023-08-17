@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useParams, Link } from "react-router-dom";
 
 export function withRouter<ComponentProps>(
@@ -15,6 +16,8 @@ export function withRouter<ComponentProps>(
 }
 
 const header = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [t] = useTranslation("global");
   return (
     <div className="header">
       <div className="container-menu">
@@ -23,7 +26,7 @@ const header = () => {
             Leah Schulze
           </Link>
 
-          <div className="description">descript</div>
+          <div className="description">{t("Home.desc")}</div>
         </div>
         <div className="menu">
           <Link to="/work" className={"section-link"}>

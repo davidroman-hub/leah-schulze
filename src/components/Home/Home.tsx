@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { State } from "../../redux/index";
+import { State } from "../../redux/reducers/index";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setHome } from "../../redux/actions/home/home";
@@ -14,6 +14,7 @@ const SetActions = () => {
     setHome: (visible: boolean) => dispatch(setHome(visible)),
   };
 };
+
 const Home: FC = (params: any) => {
   const [t, i18n] = useTranslation("global");
   const { setHome } = SetActions();
