@@ -2,9 +2,12 @@ import React from "react";
 import { Fade, Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import slideSHowPhoto2 from "../../styles/photos/slideshow/2.jpg";
+import { useSelector } from "react-redux";
+import { State } from "../../redux/reducers";
 
 const slideShowProjects = (info: any) => {
-  console.log(info.map((hh: any) => hh.photos.map((h: any) => h)));
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { projectInfo } = useSelector((state: State) => state.Home);
 
   const images = [
     "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
@@ -49,7 +52,8 @@ const slideShowProjects = (info: any) => {
       </Slide>
 
       <div className="project-description">
-        <div className="description-text"> description</div>
+        <div className="project-title">{projectInfo.projectTitle}</div>
+        <div className="description-text">{projectInfo.description}</div>
       </div>
     </div>
   );

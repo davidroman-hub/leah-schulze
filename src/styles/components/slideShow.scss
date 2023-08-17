@@ -36,17 +36,28 @@
 }
 
 .slide-show-position {
-  background-color: aqua;
+
   padding-top: 50px;
 }
 
 .project-description {
-  background-color: green;
+
   justify-content: center;
   display: flex;
+  flex-direction: column;
   margin-top: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
 }
 .description-text {
-  background-color: pink;
-  width: 900px;
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  height: 100%;
+  @media (max-width: 769px) {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 200px;
+  }
 }

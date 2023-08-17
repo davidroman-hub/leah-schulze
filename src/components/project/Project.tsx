@@ -126,7 +126,6 @@ const contentProjects = (isProjectActive: boolean) => {
 
 const Project: FC = (params: any) => {
   const { isProjectActive } = useSelector((state: State) => state.Home);
-  // console.log(isProjectActive);
   return (
     <div className="body">
       {header(params)}
