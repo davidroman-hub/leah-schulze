@@ -32,7 +32,9 @@ const header = () => {
           <Link to="/work" className={"section-link"}>
             Work
           </Link>
-          <div>about</div>
+          <Link to="/about" className={"section-link"}>
+            About
+          </Link>
           <div>contact</div>
         </div>
       </div>
