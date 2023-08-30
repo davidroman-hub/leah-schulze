@@ -23,8 +23,6 @@ export const bodyInfoProject = (info: any): JSX.Element => {
           width: "100vw",
           height: "100vh",
           backgroundColor: "#e3dbe0",
-          // border: `2px solid blue`,
-          // borderRadius: "4px",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",

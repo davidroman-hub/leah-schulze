@@ -14,12 +14,13 @@
 }
 
 .each-slide-effect > div {
+  height: 100%;
   width: 100%;
 }
 
 .each-slide-effect > div img {
   width: 100%;
-  height: 100%;
+  height: 600px;
   object-fit: cover;
 }
 
