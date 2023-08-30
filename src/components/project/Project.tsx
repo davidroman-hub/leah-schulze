@@ -7,19 +7,7 @@ import { CardActionArea, Modal } from "@mui/material";
 import { bodyInfoProject } from "./BodyModal";
 
 import facecard1 from "../../styles/photos/projects/project1/1p1.jpg";
-import facecard2 from "../../styles/photos/projects/project1/2p1.jpg";
-import facecard3 from "../../styles/photos/projects/project1/3p1.jpg";
-import facecard4 from "../../styles/photos/projects/project1/4p1.jpg";
-import facecard5 from "../../styles/photos/projects/project1/5p1.jpg";
-import facecard6 from "../../styles/photos/projects/project1/6p1.jpg";
-import facecard7 from "../../styles/photos/projects/project1/7p1.jpg";
-import facecard8 from "../../styles/photos/projects/project1/8p1.jpg";
-
 import facecard1p2 from "../../styles/photos/projects/project2/1p2.jpg";
-import facecard2p2 from "../../styles/photos/projects/project2/2p2.jpg";
-import facecard3p2 from "../../styles/photos/projects/project2/3p2.jpg";
-import facecard4p2 from "../../styles/photos/projects/project2/4p2.jpg";
-import facecard5p2 from "../../styles/photos/projects/project2/5p2.jpg";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -42,7 +30,7 @@ const SetActions = () => {
 const mediaCard = (workInfo: any) => {
   const { setProject } = SetActions();
 
-  return workInfo.map((info: any, indx: any) => (
+  return workInfo?.map((info: any, indx: any) => (
     <div key={indx} className="card-work">
       <Card sx={{ height: 300, width: 450, marginLeft: "30px" }}>
         <CardActionArea onClick={() => setProject(info)}>

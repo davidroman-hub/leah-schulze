@@ -40,7 +40,7 @@ const slideShowProjects = (info: any) => {
   return (
     <div className="slide-show-position">
       <Slide autoplay={false} nextArrow={nextArrow} prevArrow={prevArrow}>
-        {projectInfo.photos.map((photos: any, indx: number) => {
+        {projectInfo?.photos?.map((photos: any, indx: number) => {
           return (
             <div className="each-slide-effect">
               <div key={indx}>
