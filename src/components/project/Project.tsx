@@ -32,7 +32,14 @@ const mediaCard = (workInfo: any) => {
 
   return workInfo?.map((info: any, indx: any) => (
     <div key={indx} className="card-work">
-      <Card sx={{ height: 300, width: 450, marginLeft: "30px" }}>
+      <Card
+        sx={{
+          height: 300,
+          width: 450,
+          marginLeft: "30px",
+          borderRadius: "0px",
+        }}
+      >
         <CardActionArea onClick={() => setProject(info)}>
           <CardMedia
             sx={{ height: 300 }}
