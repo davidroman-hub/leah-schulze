@@ -30,10 +30,10 @@ const header = () => {
         </div>
         <div className="menu">
           <Link to="/work" className={"section-link"}>
-            Work
+            work
           </Link>
           <Link to="/about" className={"section-link"}>
-            About
+            about
           </Link>
           <div>contact</div>
         </div>
