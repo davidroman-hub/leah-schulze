@@ -16,6 +16,7 @@ import {
   setModalProject,
 } from "../../redux/actions/projects/projects";
 import { State } from "../../redux/reducers";
+import React from "react";
 
 const SetActions = () => {
   const dispatch = useDispatch();
@@ -30,13 +31,40 @@ const SetActions = () => {
 const mediaCard = (workInfo: any) => {
   const { setProject } = SetActions();
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [imgLoad, setImgLoad] = React.useState(false);
+
+  console.log(imgLoad);
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  React.useEffect(() => {
+    const loadImage = (src: string) =>
+      new Promise((resolve, reject) => {
+        setImgLoad(true);
+        const img = new Image();
+        img.onload = () => {
+          resolve(img);
+        };
+        img.onerror = reject;
+        img.src = src;
+      });
+    loadImage(
+      "https://res.cloudinary.com/da9n76ytf/image/upload/v1696520833/BLOOM%20NEW/nooooo_suxdcb.jpg"
+    ).then((image: any) => {
+      setTimeout(() => {
+        setImgLoad(false);
+      }, 2000);
+      return image;
+    });
+  }, []);
+
   return workInfo?.map((info: any, indx: any) => (
     <li key={indx} className="cards_item">
       <div className="card-item">
         <div className="card_image">
           <img
             src={info.projectPhoto}
-            onClick={() => setProject(workInfo)}
+            onClick={() => setProject(info)}
             className="card-img-project"
             alt=".."
           />
@@ -103,7 +131,7 @@ const contentProjects = (isProjectActive: boolean) => {
 
     {
       projectTitle: "Turnit",
-      description: `The city of Narva, located in northern part of Estonia, has been one of the capitals of textile production during the times of the Soviet Union. Like this a high percentage of the elderly population has been dedicating their professional life to working with textiles. As part of an artist in residency program I had the chance to work with people with dementia on a three months textile project. Together we have been exploring the world of textiles in various workshops. These workshops were aiming to integrate techniques such as weaving and cutting to stimulate the muscle memory as well as activating the brain with a known material. Cooperating with the nurses helped to create a vivid exchange of knowledge and experience`,
+      description: `Turnit Games are one of the easiest ways to bring joy and happiness to people. Turnit is a toolkit designed for people with dementia. It is made of screwable aluminium pieces as well as bendable rope. The pieces can be combined endlessly. Interesting color combinations as well as fanciful forms and objects can be created in cooperation with a partner. The toolkit is designed to work nonverbally, thus replacing verbal communication with a new way of interaction. The toys can be used by anyone - irrespective of one’s age, fitness or cultural background. Dementia is agonizing for everyone involved. This is why Turnit is meant to be enjoyed by both parties equally. While stimulating the senses, it is designed to bring focus to the little happy moments of cohesion and love when needed most.`,
       projectPhoto: `https://res.cloudinary.com/da9n76ytf/image/upload/v1696521630/TURNIT%20NEW/Leah_210614_58-min_kqlhrk.jpg`,
       photos: [
         `https://res.cloudinary.com/da9n76ytf/image/upload/v1696521630/TURNIT%20NEW/Leah_210614_58-min_kqlhrk.jpg`,

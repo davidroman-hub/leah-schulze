@@ -18,10 +18,16 @@
   flex-direction: column;
 }
 
+.general-modal-title {
+  cursor: pointer;
+}
+
 //
 
 .card-img-project {
   width: -webkit-fill-available;
+  max-width: fit-content;
+  max-width: 700px;
   max-height: 430px;
 }
 
@@ -35,7 +41,10 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-right: 40px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
   img:hover {
     cursor: pointer;
     transition: 0.3s;
@@ -47,6 +56,7 @@
   display: flex;
   padding: 1rem;
   width: -webkit-fill-available;
+  padding-right: 35px;
 }
 
 @media (min-width: 40rem) {
