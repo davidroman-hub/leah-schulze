@@ -33,7 +33,6 @@ const mediaCard = (workInfo: any) => {
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [imgLoad, setImgLoad] = React.useState(false);
-
   console.log(imgLoad);
 
   // eslint-disable-next-line react-hooks/rules-of-hooks

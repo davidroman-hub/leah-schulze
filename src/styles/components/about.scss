@@ -2,10 +2,18 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media (max-width: 769px) {
+    flex-direction: column;
+  }
 }
 .info-about {
-  width: 700px;
+  min-width: 100px;
+  text-align: justify;
+  margin: 40px;
 }
 .about-photo-div {
   width: 40%;
+  margin-right: 30px;
+  margin-bottom: 10%;
 }

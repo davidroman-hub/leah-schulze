@@ -36,6 +36,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+  font-size: 18px;
 }
 .project-cards {
   display: flex;
@@ -46,7 +47,7 @@
   margin-right: auto;
 
   img:hover {
-    cursor: pointer;
+    //cursor: pointer;
     transition: 0.3s;
     opacity: 0.5;
   }
